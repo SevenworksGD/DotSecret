@@ -1,4 +1,4 @@
 process = (s: @string) {
-    return s.split('\n').map((s: @string) => s.trim().split('=').map((s: @string) => s.trim()))
+    return s.split('\n').map((s: @string) => s.trim().split(':').map((s: @string) => s.trim()))
 }
-return process($.readfile("../../.env"))
+return process($.readfile("../../.secret"))
